@@ -6,7 +6,7 @@ from product.models import Product
 
 
 class Order(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    orderid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     total_ammount = models.IntegerField(default=0)                          # set this to the total amount
     paid = models.BooleanField(default=False)                               # set this to true if paid
 

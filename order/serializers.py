@@ -15,7 +15,7 @@ class OrderSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Order
 		fields = [
-			'id',
+			'orderid',
 			'total_ammount', 
 			'first_name', 
 			'last_name', 
@@ -31,5 +31,5 @@ class OrderSerializer(serializers.ModelSerializer):
 	def to_representation(self, instance):
 		many = isinstance(instance, list) # checking if instance is a single object or a list
 		if self.context.get('request').method == 'POST': # remove id field from serialization if creating a new order
-			self.fields.pop('id', None)
+			self.fields.pop('orderid', None)
 		return super().to_representation(instance)
