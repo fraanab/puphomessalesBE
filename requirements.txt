@@ -12,3 +12,4 @@ sqlparse==0.4.4
 typing_extensions==4.6.3
 tzdata==2023.3
 urllib3==1.26.16
+psycopg2==2.9.6
