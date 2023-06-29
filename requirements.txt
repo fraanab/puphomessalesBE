@@ -15,3 +15,4 @@ urllib3==1.26.16
 psycopg2==2.9.6
 dj-database-url==2.0.0
 gunicorn==20.1.0
+python-dotenv==1.0.0
