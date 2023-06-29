@@ -40,7 +40,7 @@ def get_orders(request, pk):
 		data = []
 		for item in order_items:
 			item_data = {
-				'orderId':item.order.id,
+				'orderId':item.order.orderid,
 				'productName': item.product.name,
 				'productPrice': item.product.price,
 				'productQuantity': item.quantity,
@@ -64,7 +64,7 @@ def all_orders(request):
 	data = []
 	for item in order_items:
 		item_data = {
-			'orderId':item.order.id,
+			'orderId':item.order.orderid,
 			'productName': item.product.name,
 			'productPrice': item.product.price,
 			'productQuantity': item.quantity,
