@@ -25,12 +25,12 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Order by {self.username} | Date {self.created} | Paid ${self.total_ammount} : {self.paid}'
+        return f'Order by {self.username} | Date {self.created} | Paid ${self.total_ammount} : {self.paid} | {self.orderid}'
 
 class OrderItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default=0)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
+    quantity = models.IntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
-        return self.product.name
+        return self.id
