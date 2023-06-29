@@ -25,7 +25,7 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Order by {self.username} | Date {self.created} | Paid ${self.total_ammount} : {self.paid} | {self.orderid}'
+        return f'Order by {self.username} | Date {self.created} | Paid ${self.total_ammount} : {self.paid} | {self.orderid} | {self.pk}'
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
