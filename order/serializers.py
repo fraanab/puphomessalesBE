@@ -28,3 +28,8 @@ class OrderSerializer(serializers.ModelSerializer):
 			'username',
 		]
 		# fields = '__all__'
+	def to_representation(self, instance):
+		many = isinstance(instance, list) # checking if instance is a single object or a list
+		if self.context.get('request').method == 'POST': # remove id field from serialization if creating a new order
+			self.fields.pop('id', None)
+		return super().to_representation(instance)
