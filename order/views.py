@@ -24,7 +24,7 @@ def order_create(request):
 			quantity = cart_product.get('quantity')
 			product = Product.objects.get(id=productId)
 
-			OrderItem.objects.create(order=order, product=product, quantity=quantity)
+			OrderItem.objects.create(order=order.id, product=product, quantity=quantity)
 
 		return Response(serializer.data, status=status.HTTP_201_CREATED)
 	return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
