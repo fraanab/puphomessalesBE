@@ -16,9 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
@@ -138,7 +138,7 @@ CLOUDINARY_STORAGE = {
     "CLOUD_NAME": os.getenv('CN'),
     "API_KEY": os.getenv('AK'),
     "API_SECRET": os.getenv('AS'),
-    "SECURE": True
+    "secure": True
 }
 
 MEDIA_URL = '/puphomessales/'
