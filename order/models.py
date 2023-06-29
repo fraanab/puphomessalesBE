@@ -28,8 +28,8 @@ class Order(models.Model):
         return f'Order by {self.username} | Date {self.created} | Paid ${self.total_ammount} : {self.paid} | {self.orderid} | {self.pk}'
 
 class OrderItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, blank=True)
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
+    order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
